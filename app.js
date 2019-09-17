@@ -22,6 +22,18 @@ class TemplateJS{
         return configFile;
     }
 
+    addTemplateWithParams(name, url){
+        let templates = this.getConfigFile();
+
+        if(fs.existsSync(url)){
+            templates.templates.push({name: name, url: url});
+            fs.writeFileSync(this.configFileName, JSON.stringify(templates));
+            console.log('New template added!'.green);
+        }else{
+            console.log('ERROR: Template location does not exist'.red);
+        }
+    }
+
     addTemplate(){
         let templates = this.getConfigFile();
 
@@ -49,7 +61,12 @@ class TemplateJS{
         });
     }
 
-    newTemplate(templateName, name){
+    newTemplateWithParams(templateName, name){
+        if(!templateName || !name){
+            console.log('ERROR: args missing...'.red);
+            console.log('Type template new --help for more information');
+            return false;
+        }
         let templates = this.getConfigFile();
         let exists = false;
         let object = {};

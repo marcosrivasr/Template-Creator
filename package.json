@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/@marcosrivasr" },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@marcosrivasr"
+  },
   "author": "Marcos Rivas Rojas",
   "license": "ISC",
   "bin": {
@@ -14,6 +16,7 @@
   },
   "dependencies": {
     "colors": "^1.3.3",
-    "inquirer": "^7.0.0"
+    "inquirer": "^7.0.0",
+    "yargs": "^14.0.0"
   }
 }
