@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/@marcosrivasr" },
+  "author": "Marcos Rivas Rojas",
   "license": "ISC",
   "bin": {
     "template": "./cli.js"
