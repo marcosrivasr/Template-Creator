@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 const Templatejs = require('./app.js');
+const colors = require('colors');
 
 const templates = new Templatejs();
 
@@ -16,13 +17,13 @@ if(command){
             if(templateName || fileName){
                 templates.newTemplate(templateName, fileName);
             }else{
-                console.error('ERROR: arguments missing...');
+                console.error('ERROR: arguments missing...'.red);
             }
         break;
 
         default:
-            console.error('ERROR: arguments missing...');
+            console.error('ERROR: no arguments provided...'.red);
     }
 }else{
-    console.log('ERROR: no command was assigned...');
+    console.log('ERROR: no command...');
 } 
